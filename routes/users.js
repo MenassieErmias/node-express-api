@@ -1,17 +1,18 @@
 import express from "express";
+import { v4 as uuid } from 'uuid';
 
 const router = express.Router();
 
-const users = [
-  {
-    "firstName": "John",
-    "lastName": "Doe",
-    "age": 21
-  }
-];
+const users = [];
 
 router.get('/', (req, res) => {
-  res.send('hello')
+  res.send(users)
+});
+
+router.post('/', (req, res) => {
+  users.push({ ...req.body, id: uuid() })
 })
+
+
 
 export default router;
