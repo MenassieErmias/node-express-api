@@ -30,4 +30,14 @@ router.delete('/:id', (req, res) => {
 })
 
 
+//update user
+router.patch('/:id', (req, res) => {
+  const { id } = req.params;
+  const { firstName, lastName, age } = req.body;
+
+  const user = users.find((user) => user.id === req.params.id);
+
+})
+
+
 export default router;
