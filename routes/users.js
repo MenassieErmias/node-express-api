@@ -1,12 +1,8 @@
 import express from "express";
-import { v4 as uuid } from 'uuid';
 
-import { getAllUsers, addUser, getUser, deleteUser, updateUser } from "../controllers/users";
+import { getAllUsers, addUser, getUser, deleteUser, updateUser } from "../controllers/users.js";
 
 const router = express.Router();
-
-let users = [];
-
 
 //get all users
 router.get('/', getAllUsers);
