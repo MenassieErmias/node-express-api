@@ -37,6 +37,12 @@ router.patch('/:id', (req, res) => {
 
   const user = users.find((user) => user.id === req.params.id);
 
+  if (firstName) user.firstName = firstName;
+  if (lastName) user.lastName = lastName;
+  if (age) user.age = age;
+
+  res.send(user);
+
 })
 
 
